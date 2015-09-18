@@ -12,26 +12,38 @@ public class TesteEquipeDFM {
     public TesteEquipeDFM() {
     }
 
-    @Before
-    public void inicializa() {
-        Ma = new Maffetone();
-    }
-
     @Test
     public void Maffetone30ResultaTrue() {
-        Assert.assertEquals(150, Ma.maximo(30));
-        Assert.assertEquals(140, Ma.minimo(30));
+        Ma = new Maffetone(30);
+        Assert.assertEquals(150, Ma.maximo());
+        Assert.assertEquals(140, Ma.minimo());
     }
 
     @Test
     public void Maffetone18ResultaFalse() {
-        Assert.assertNotSame(150, Ma.maximo(18));
-        Assert.assertNotSame(140, Ma.minimo(18));
+        Ma = new Maffetone(18);
+        Assert.assertNotSame(150, Ma.maximo());
+        Assert.assertNotSame(140, Ma.minimo());
     }
 
     @Test
     public void Maffetone12ResultaTrue() {
-        Assert.assertEquals(168, Ma.maximo(12));
-        Assert.assertEquals(158, Ma.minimo(12));
+        Ma = new Maffetone(12);
+        Assert.assertEquals(168, Ma.maximo());
+        Assert.assertEquals(158, Ma.minimo());
+    }
+
+    @Test
+    public void Maffetone60AResultaTrue() {
+        Ma = new Maffetone(60, "a");
+        Assert.assertEquals(110, Ma.maximo());
+        Assert.assertEquals(100, Ma.minimo());
+    }
+
+    @Test
+    public void Maffetone27AResultaTrue() {
+        Ma = new Maffetone(27, "b");
+        Assert.assertEquals(148, Ma.maximo());
+        Assert.assertEquals(138, Ma.minimo());
     }
 }

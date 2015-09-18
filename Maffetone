@@ -2,19 +2,33 @@ package equipedfm;
 
 public class Maffetone {
 
+    int iIdade;
+
     public static void main(String[] args) {
 
     }
 
-    public int minimo (int idade){
-        int minimo = (180 - idade) -10;
-        return minimo;
+    public Maffetone(int idade, String caso) {
+        switch (caso) {
+            case "a":
+                iIdade = idade + 10;
+                break;
+            case "b":
+                iIdade = idade + 5;
+                break;
+        }
     }
-    
-      public int maximo (int idade){
-        int maximo = 180 - idade;
-        return maximo;
+
+    public Maffetone(int idade) {
+        iIdade = idade;
     }
-    
-    
+
+    public int minimo() {
+        return ((180 - iIdade) - 10);
+    }
+
+    public int maximo() {
+        return (180 - iIdade);
+    }
+
 }

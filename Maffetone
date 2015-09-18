@@ -1,0 +1,20 @@
+package equipedfm;
+
+public class Maffetone {
+
+    public static void main(String[] args) {
+
+    }
+
+    public int minimo (int idade){
+        int minimo = (180 - idade) -10;
+        return minimo;
+    }
+    
+      public int maximo (int idade){
+        int maximo = 180 - idade;
+        return maximo;
+    }
+    
+    
+}

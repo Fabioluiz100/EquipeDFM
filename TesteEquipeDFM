@@ -1,0 +1,37 @@
+
+import org.junit.Before;
+import org.junit.Test;
+import equipedfm.Maffetone;
+import org.junit.Assert;
+
+public class TesteEquipeDFM {
+
+    Maffetone Ma;
+    int[] valores = new int[2];
+
+    public TesteEquipeDFM() {
+    }
+
+    @Before
+    public void inicializa() {
+        Ma = new Maffetone();
+    }
+
+    @Test
+    public void Maffetone30ResultaTrue() {
+        Assert.assertEquals(150, Ma.maximo(30));
+        Assert.assertEquals(140, Ma.minimo(30));
+    }
+
+    @Test
+    public void Maffetone18ResultaFalse() {
+        Assert.assertNotSame(150, Ma.maximo(18));
+        Assert.assertNotSame(140, Ma.minimo(18));
+    }
+
+    @Test
+    public void Maffetone12ResultaTrue() {
+        Assert.assertEquals(168, Ma.maximo(12));
+        Assert.assertEquals(158, Ma.minimo(12));
+    }
+}
